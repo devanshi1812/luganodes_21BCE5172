@@ -1,54 +1,42 @@
-# ETH Deposit Tracker
+Ethereum Deposit Tracker-
+This project is designed to monitor and record Ethereum (ETH) deposits on the Beacon Deposit Contract, tracking deposits in real-time. The tracker establishes an RPC connection to an Ethereum node and captures details like deposit amount, sender address, timestamp, and more.
 
-The ETH Deposit Tracker is a TypeScript-based application that monitors Ethereum deposits on the blockchain. It tracks deposit transactions, stores them in a MongoDB database, and sends notifications via Telegram when new deposits are detected.
 
-## Prerequisites
+The Ethereum Deposit Tracker is designed to:
 
-Before you start, ensure you have the following installed:
+Monitor the Beacon Deposit Contract (0x00000000219ab540356cBB839Cbe05303d7705Fa) for incoming ETH deposits.
+Handle and store multiple deposits within a single transaction, including internal transactions.
+Provide robust error handling and logging mechanisms.
+Optional: Set up a Grafana dashboard and Telegram notifications for alerting.
+Prerequisites:
+Before you begin, ensure you have met the following requirements:
 
-- **Node.js**: Version 14 or later.
-- **npm**: Version 6 or later (comes with Node.js).
-- **MongoDB**: Ensure MongoDB is installed and running on the default port `27017`.
+Node.js (version 14 or above)
+npm or yarn
+An Ethereum node provider (e.g., Alchemy, Infura)
+Docker (if you intend to Dockerize the application)
+An Ethereum wallet (e.g., MetaMask) for testing purposes
+Installation
+Clone the Repository:
 
-### MongoDB Installation
+bash
+Copy code
+git clone https://github.com/your-username/eth-deposit-tracker.git
+cd eth-deposit-tracker
+Install Dependencies:
 
-If you don't have MongoDB installed, you can install it using the following steps:
+Use npm or yarn to install the required dependencies:
 
-- **macOS** (using Homebrew):
+bash
+npm install
+# or
+yarn install
+Run the Application:
+npm start
+Start the Ethereum deposit tracker:
 
-  ```bash
-  brew tap mongodb/brew
-  brew install mongodb-community@6.0
-  brew services start mongodb/brew/mongodb-community
-  ```
-
-  ## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run build`
-
-Compiles the TypeScript code to JavaScript.
-
-### `npm run dev`
-
-## Architecture
-
-This project was developed using Clean Architecture principles along with SOLID design principles. The Clean Architecture approach ensures separation of concerns and independence of frameworks, making the system more maintainable, scalable, and testable. The application is structured into layers:
-
-1. Entities: Core business logic and domain models.
-2. Use Cases: Application-specific business rules.
-3. Interface Adapters: Presenters, controllers, and gateways.
-4. Frameworks and Drivers: External frameworks and tools (database, web framework, etc.).
-
-SOLID principles were applied throughout the development:
-
-- Single Responsibility Principle: Each class and module has a single, well-defined responsibility.
-- Open-Closed Principle: The system is open for extension but closed for modification.
-- Liskov Substitution Principle: Objects of a superclass are replaceable with objects of its subclasses without affecting the correctness of the program.
-- Interface Segregation Principle: Clients are not forced to depend on interfaces they do not use.
-- Dependency Inversion Principle: High-level modules do not depend on low-level modules. Both depend on abstractions.
-
-## Flexibility
-
-The ETH Deposit Tracker was designed with flexibility in mind. It can be easily configured to listen for any token from any blockchain by simply configuring a context for each one. This modular approach allows for easy expansion to support multiple cryptocurrencies and blockchains without significant changes to the core architecture.
+bash
+Copy code
+npm start
+# or
+yarn start
