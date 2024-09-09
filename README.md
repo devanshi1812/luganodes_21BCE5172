@@ -1,4 +1,4 @@
-Ethereum Deposit Tracker-
+#Luganodes_task_21bce5172
 This project is designed to monitor and record Ethereum (ETH) deposits on the Beacon Deposit Contract, tracking deposits in real-time. The tracker establishes an RPC connection to an Ethereum node and captures details like deposit amount, sender address, timestamp, and more.
 
 
@@ -29,7 +29,7 @@ Use npm or yarn to install the required dependencies:
 
 bash
 npm install
-# or
+ or
 yarn install
 Run the Application:
 npm start
@@ -38,5 +38,5 @@ Start the Ethereum deposit tracker:
 bash
 Copy code
 npm start
-# or
+ or
 yarn start
